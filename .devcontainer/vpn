@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+function usage {
+	tailscale;
+	exit 0;
+}
+
+function ensure_config {
+	ps -ef | grep '/usr/sbin/tailscaled' | grep -v grep &>/dev/null;
+	if [[ $? -ne 0 ]]
+	then
+		echo "Starting /usr/sbin/tailscaled...";
+		/usr/sbin/tailscaled &>/dev/null &
+	fi
+}
+
+[[ $# -lt 1 ]] && usage;
+
+case $1 in
+	up )
+		ensure_config;
+		shift;
+		tailscale up --accept-routes $@
+		;;
+	* )
+		tailscale $@
+		;;
+esac
