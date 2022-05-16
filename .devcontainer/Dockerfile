@@ -8,8 +8,6 @@ curl -fsSL https://pkgs.tailscale.com/stable/debian/$(lsb_release -cs).noarmor.g
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/debian $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/tailscale.list > /dev/null && \
 apt update && \
 apt -y install tailscale && \
-chmod u+s /usr/sbin/tailscaled && \
-chmod u+s /usr/bin/tailscale && \
 usermod -s /bin/zsh vscode
 
 COPY vpn /usr/local/bin/vpn
