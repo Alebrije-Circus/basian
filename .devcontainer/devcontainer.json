@@ -10,6 +10,7 @@
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
-		"ghcr.io/joedmck/devcontainer-features/cloudflared:1": {}
+		"ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
+		"ghcr.io/devcontainers-contrib/features/wireguard-apt-get:1": {}
 	}
 }
