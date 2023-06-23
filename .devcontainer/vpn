@@ -24,7 +24,7 @@ case $1 in
 	up )
 		ensure_config;
 		shift;
-		${SUDOCMD}tailscale up --accept-routes $@
+		${SUDOCMD}tailscale up --advertise-tags=tag:server,tag:development --accept-routes $@ 
 		;;
 	* )
 		${SUDOCMD}tailscale $@
