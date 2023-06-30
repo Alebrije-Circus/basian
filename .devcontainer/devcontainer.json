@@ -1,7 +1,7 @@
 {
 	"name": "VSCode Debian + Tailscale",
 	"build": {
-		"dockerfile": "Dockerfile",
+		"dockerfile": "Dockerfile.tailscale"
 	},
 
 	// Allow the container to interact with host networking
@@ -13,4 +13,4 @@
 		"ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
 		"ghcr.io/devcontainers-contrib/features/wireguard-apt-get:1": {}
 	}
-}
+}	
